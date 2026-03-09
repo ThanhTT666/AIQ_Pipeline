@@ -1,0 +1,441 @@
+2026-03-09 14:44:56 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 14:44:56 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 14:44:56 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 14:44:56 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 14:44:56 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 14:44:57 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 14:44:57 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 14:44:57 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 14:44:57 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 14:44:58 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 14:44:58 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 14:44:58 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 14:44:58 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 14:44:58 - AIQ_Pipeline - ERROR - Pipeline failed with error: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\AIQ_pj\\AIQ_code\\data\\processed\\clean_dataset.csv'
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 49, in run
+    processed_path.unlink(missing_ok=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 746, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\AIQ_pj\\AIQ_code\\data\\processed\\clean_dataset.csv'
+2026-03-09 19:02:47 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:02:47 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:02:47 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:02:47 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:02:47 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:02:48 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:02:49 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:02:49 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:02:51 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:02:51 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:02:52 - AIQ_Pipeline - ERROR - Pipeline failed with error: IO Error: Cannot open file "d:\aiq_pj\aiq_code\warehouse\air_quality.duckdb": The system cannot find the path specified.
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 62, in run
+    conn = create_warehouse(warehouse_path)
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 20, in create_warehouse
+    conn = duckdb.connect(str(warehouse_path))
+_duckdb.IOException: IO Error: Cannot open file "d:\aiq_pj\aiq_code\warehouse\air_quality.duckdb": The system cannot find the path specified.
+
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:04:20 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:04:21 - AIQ_Pipeline - ERROR - Pipeline failed with error: Binder Error: Referenced column "pm25" not found in FROM clause!
+Candidate bindings: "pm2_5", "pm10"
+
+LINE 6:             ROUND(AVG(pm25), 2) as avg_pm25,
+                              ^
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 48, in load_data_to_warehouse
+    conn.execute("""
+    ~~~~~~~~~~~~^^^^
+        CREATE TABLE daily_city_metrics AS
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ORDER BY city, date
+        ^^^^^^^^^^^^^^^^^^^
+    """)
+    ^^^^
+_duckdb.BinderException: Binder Error: Referenced column "pm25" not found in FROM clause!
+Candidate bindings: "pm2_5", "pm10"
+
+LINE 6:             ROUND(AVG(pm25), 2) as avg_pm25,
+                              ^
+2026-03-09 19:05:55 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:05:55 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:05:55 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:05:55 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:05:55 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:05:56 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:05:57 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:05:57 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:05:57 - AIQ_Pipeline - ERROR - Pipeline failed with error: Binder Error: Referenced column "aqi" not found in FROM clause!
+Candidate bindings: "aerosol_optical_depth", "date", "city"
+
+LINE 8:             ROUND(AVG(aqi), 2) as avg_aqi,
+                              ^
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 48, in load_data_to_warehouse
+    conn.execute("""
+    ~~~~~~~~~~~~^^^^
+        CREATE TABLE daily_city_metrics AS
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        ORDER BY city, date
+        ^^^^^^^^^^^^^^^^^^^
+    """)
+    ^^^^
+_duckdb.BinderException: Binder Error: Referenced column "aqi" not found in FROM clause!
+Candidate bindings: "aerosol_optical_depth", "date", "city"
+
+LINE 8:             ROUND(AVG(aqi), 2) as avg_aqi,
+                              ^
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:07:06 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:07:07 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:07:07 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:07:07 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:07:07 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:07:07 - AIQ_Pipeline - ERROR - Pipeline failed with error: Conversion Error: invalid date field format: "8/1/2022", expected format is (YYYY-MM-DD) when casting from source column date
+
+LINE 19:         GROUP BY city, CAST(date AS DATE)
+                                ^
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 72, in load_data_to_warehouse
+    conn.execute(create_metrics_sql)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+_duckdb.ConversionException: Conversion Error: invalid date field format: "8/1/2022", expected format is (YYYY-MM-DD) when casting from source column date
+
+LINE 19:         GROUP BY city, CAST(date AS DATE)
+                                ^
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:08:50 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:08:51 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:08:51 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:08:51 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:08:51 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:08:51 - AIQ_Pipeline - ERROR - Pipeline failed with error: Invalid Input Error: Could not parse string "2022-08-01" according to format specifier "%m/%d/%Y"
+2022-08-01
+^
+Error: Month out of range, expected a value between 1 and 12
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 72, in load_data_to_warehouse
+    conn.execute(create_metrics_sql)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+_duckdb.InvalidInputException: Invalid Input Error: Could not parse string "2022-08-01" according to format specifier "%m/%d/%Y"
+2022-08-01
+^
+Error: Month out of range, expected a value between 1 and 12
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:14:14 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:14:15 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:14:15 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:14:15 - AIQ_Pipeline - ERROR - Pipeline failed with error: Invalid Input Error: Could not parse string "8/1/2022" according to format specifier "%Y-%m-%d"
+8/1/2022
+  ^
+Error: Literal does not match, expected -
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 72, in load_data_to_warehouse
+    conn.execute(create_metrics_sql)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+_duckdb.InvalidInputException: Invalid Input Error: Could not parse string "8/1/2022" according to format specifier "%Y-%m-%d"
+8/1/2022
+  ^
+Error: Literal does not match, expected -
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:16:39 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:16:40 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:16:40 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:16:40 - AIQ_Pipeline - ERROR - Pipeline failed with error: Invalid Input Error: Could not parse string "8/1/2022" according to format specifier "%Y-%m-%d"
+8/1/2022
+  ^
+Error: Literal does not match, expected -
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 72, in load_data_to_warehouse
+    conn.execute(create_metrics_sql)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+_duckdb.InvalidInputException: Invalid Input Error: Could not parse string "8/1/2022" according to format specifier "%Y-%m-%d"
+8/1/2022
+  ^
+Error: Literal does not match, expected -
+2026-03-09 19:19:09 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:19:09 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:19:09 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:19:09 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:19:10 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:19:10 - AIQ_Pipeline - ERROR - Pipeline failed with error: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\AIQ_pj\\AIQ_code\\data\\processed\\clean_dataset.csv'
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 49, in run
+    processed_path.unlink(missing_ok=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 746, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\AIQ_pj\\AIQ_code\\data\\processed\\clean_dataset.csv'
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:19:29 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:19:30 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:19:30 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:19:30 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:19:30 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:19:30 - AIQ_Pipeline - ERROR - Pipeline failed with error: Invalid Input Error: Could not parse string "8/1/2022" according to format specifier "%Y-%m-%d"
+8/1/2022
+  ^
+Error: Literal does not match, expected -
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 63, in run
+    load_data_to_warehouse(conn, df)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\AIQ_pj\AIQ_code\src\processing\duckdb_warehouse.py", line 72, in load_data_to_warehouse
+    conn.execute(create_metrics_sql)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+_duckdb.InvalidInputException: Invalid Input Error: Could not parse string "8/1/2022" according to format specifier "%Y-%m-%d"
+8/1/2022
+  ^
+Error: Literal does not match, expected -
+2026-03-09 19:21:25 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:21:25 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:21:26 - AIQ_Pipeline - INFO -   - Duplicates: 4
+2026-03-09 19:21:27 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:21:27 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - DuckDB warehouse created at D:\AIQ_pj\AIQ_code\warehouse\air_quality.duckdb
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - Generating analytics...
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - Saved analytics to D:\AIQ_pj\AIQ_code\data\analytics\summary_metrics.csv
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - Pipeline completed successfully!
+2026-03-09 19:21:28 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:41:52 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:41:52 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:41:52 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:41:52 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:41:52 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO -   - Total rows: 6489
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:41:53 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:41:54 - AIQ_Pipeline - INFO - Exported 5 parquet files to data lake
+2026-03-09 19:41:54 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:41:54 - AIQ_Pipeline - INFO - DuckDB warehouse created at D:\AIQ_pj\AIQ_code\warehouse\air_quality.duckdb
+2026-03-09 19:41:55 - AIQ_Pipeline - INFO - Generating analytics...
+2026-03-09 19:41:55 - AIQ_Pipeline - INFO - Saved analytics to D:\AIQ_pj\AIQ_code\data\analytics\summary_metrics.csv
+2026-03-09 19:41:55 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:41:55 - AIQ_Pipeline - INFO - Pipeline completed successfully!
+2026-03-09 19:41:55 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:46:12 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:46:12 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:46:12 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:46:12 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:46:12 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:46:13 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:46:13 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:46:13 - AIQ_Pipeline - ERROR - Pipeline failed with error: to_datetime() got an unexpected keyword argument 'infer_datetime_format'
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 31, in run
+    df = clean_data(df)
+  File "D:\AIQ_pj\AIQ_code\src\processing\clean_data.py", line 15, in clean_data
+    df[col] = pd.to_datetime(df[col], errors='coerce', infer_datetime_format=True)
+              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: to_datetime() got an unexpected keyword argument 'infer_datetime_format'
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO -   - Total rows: 6489
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 19:47:19 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 19:47:20 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 19:47:20 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 19:47:20 - AIQ_Pipeline - INFO - Exported 5 parquet files to data lake
+2026-03-09 19:47:20 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 19:47:21 - AIQ_Pipeline - INFO - DuckDB warehouse created at D:\AIQ_pj\AIQ_code\warehouse\air_quality.duckdb
+2026-03-09 19:47:21 - AIQ_Pipeline - INFO - Generating analytics...
+2026-03-09 19:47:21 - AIQ_Pipeline - INFO - Saved analytics to D:\AIQ_pj\AIQ_code\data\analytics\summary_metrics.csv
+2026-03-09 19:47:21 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 19:47:21 - AIQ_Pipeline - INFO - Pipeline completed successfully!
+2026-03-09 19:47:21 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO -   - Total rows: 2596
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 20:53:02 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 20:53:03 - AIQ_Pipeline - INFO - Exported 2 parquet files to data lake
+2026-03-09 20:53:03 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 20:53:04 - AIQ_Pipeline - INFO - DuckDB warehouse created at D:\AIQ_pj\AIQ_code\warehouse\air_quality.duckdb
+2026-03-09 20:53:04 - AIQ_Pipeline - INFO - Generating analytics...
+2026-03-09 20:53:04 - AIQ_Pipeline - INFO - Saved analytics to D:\AIQ_pj\AIQ_code\data\analytics\summary_metrics.csv
+2026-03-09 20:53:04 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 20:53:04 - AIQ_Pipeline - INFO - Pipeline completed successfully!
+2026-03-09 20:53:04 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 22:00:21 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-09 22:00:21 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 22:00:21 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-09 22:00:21 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 22:00:22 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-09 22:00:23 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-09 22:00:23 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-09 22:00:23 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-09 22:00:23 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-09 22:00:23 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-09 22:00:23 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-09 22:00:24 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-09 22:00:24 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-09 22:00:25 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-09 22:00:25 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-09 22:00:27 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-09 22:00:27 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-09 22:00:30 - AIQ_Pipeline - INFO - DuckDB warehouse created at D:\AIQ_pj\AIQ_code\warehouse\air_quality.duckdb
+2026-03-09 22:00:31 - AIQ_Pipeline - INFO - Generating analytics...
+2026-03-09 22:00:31 - AIQ_Pipeline - INFO - Saved analytics to D:\AIQ_pj\AIQ_code\data\analytics\summary_metrics.csv
+2026-03-09 22:00:31 - AIQ_Pipeline - INFO - ============================================================
+2026-03-09 22:00:32 - AIQ_Pipeline - INFO - Pipeline completed successfully!
+2026-03-09 22:00:32 - AIQ_Pipeline - INFO - ============================================================

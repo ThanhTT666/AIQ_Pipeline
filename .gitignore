@@ -14,10 +14,10 @@ __pycache__/
 *.swo
 
 # Data & Outputs (large files, regenerate on fresh setup)
-data/
-data_lake/
-warehouse/
-logs/
+# data/           # REMOVED - now including small datasets
+# data_lake/      # Regenerated on pipeline run
+warehouse/       # Regenerated on pipeline run
+logs/            # Regenerated on pipeline run
 
 # Reports (regenerate)
 reports/
