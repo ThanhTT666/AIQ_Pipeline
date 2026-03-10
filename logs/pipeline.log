@@ -439,3 +439,48 @@ TypeError: to_datetime() got an unexpected keyword argument 'infer_datetime_form
 2026-03-09 22:00:31 - AIQ_Pipeline - INFO - ============================================================
 2026-03-09 22:00:32 - AIQ_Pipeline - INFO - Pipeline completed successfully!
 2026-03-09 22:00:32 - AIQ_Pipeline - INFO - ============================================================
+2026-03-10 13:18:31 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-10 13:18:31 - AIQ_Pipeline - INFO - ============================================================
+2026-03-10 13:18:31 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-10 13:18:31 - AIQ_Pipeline - INFO - ============================================================
+2026-03-10 13:18:31 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-10 13:18:32 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-10 13:18:32 - AIQ_Pipeline - ERROR - Pipeline failed with error: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\AIQ_pj\\AIQ_code\\data\\processed\\clean_dataset.csv'
+Traceback (most recent call last):
+  File "D:\AIQ_pj\AIQ_code\src\pipeline\run_pipeline.py", line 49, in run
+    processed_path.unlink(missing_ok=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 746, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\AIQ_pj\\AIQ_code\\data\\processed\\clean_dataset.csv'
+2026-03-10 13:19:53 - AIQ_Pipeline - INFO - Logging initialized. Log file: D:\AIQ_pj\AIQ_code\logs\pipeline.log
+2026-03-10 13:19:53 - AIQ_Pipeline - INFO - ============================================================
+2026-03-10 13:19:53 - AIQ_Pipeline - INFO - Starting AIQ Pipeline
+2026-03-10 13:19:53 - AIQ_Pipeline - INFO - ============================================================
+2026-03-10 13:19:53 - AIQ_Pipeline - INFO - Phase 1: Loading raw data...
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Loaded 9085 records from 7 cities
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Phase 2: Cleaning data...
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Data cleaning completed
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Phase 2.5: Validating data quality...
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Data quality report saved to data_quality\data_quality_report.json
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO -   - Total rows: 9085
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO -   - Total columns: 14
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO -   - Duplicates: 0
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Saved cleaned dataset to D:\AIQ_pj\AIQ_code\data\processed\clean_dataset.csv
+2026-03-10 13:19:54 - AIQ_Pipeline - INFO - Phase 3: Exporting to Parquet Data Lake...
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - Exported 7 parquet files to data lake
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - Phase 4: Loading to DuckDB Warehouse...
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - DuckDB warehouse created at D:\AIQ_pj\AIQ_code\warehouse\air_quality.duckdb
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - Generating analytics...
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - Saved analytics to D:\AIQ_pj\AIQ_code\data\analytics\summary_metrics.csv
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - ============================================================
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - Pipeline completed successfully!
+2026-03-10 13:19:56 - AIQ_Pipeline - INFO - ============================================================

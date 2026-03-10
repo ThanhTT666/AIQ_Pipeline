@@ -10,6 +10,13 @@ A production-grade data engineering pipeline for processing air quality data fro
 - **Features**: 11 air quality metrics (PM2.5, PM10, CO, NO2, SO2, O3, etc.)
 - **Size**: ~2.6 MB (lightweight - included in repo)
 
+## 📥 Data Source
+
+**Dataset**: Available on Kaggle  
+🔗 [nitirajkulkarni/datasets](https://www.kaggle.com/nitirajkulkarni/datasets)
+
+The air quality data is sourced from Kaggle and includes historical records for 7 major Asian cities.
+
 ## 🏗️ Architecture
 
 ```
